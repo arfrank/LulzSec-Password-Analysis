@@ -18,8 +18,21 @@ for line in pbslines:
 	pw_hash.append(pH.strip())
 pbs.close()
 """
+def process_email_pw_dump(lines):
+	pw_list = []
+	tempEmail = []
+	prevPass = None
+	for line in lines:
+		lineList = line.strip().split('|')
+		tEmail = (lineList[0]).strip()
+		newPass = (lineList[1]).strip()
+		if tEmail not in tempEmail and newPass != prevPass:
+			tempEmail.append(tEmail)
+			pw_list.append(newPass)
+		prevPass = newPass
+	return pw_list
 #Sony 
-auto = open("Sownage/Sony_Pictures/Sony_Pictures_International_AUTOTRADER_USERS.txt",'r')
+auto = open("../Sownage/Sony Pictures/Sony_Pictures_International_AUTOTRADER_USERS.txt",'r')
 autolines = auto.readlines()
 tempEmail = []
 prevPass = None
@@ -35,32 +48,16 @@ for line in autolines:
 	prevPass = newPass
 
 #Sony 
-beauty = open("Sownage/Sony_Pictures/Sony_Pictures_International_BEAUTY_USERS.txt",'r')
+beauty = open("../Sownage/Sony Pictures/Sony_Pictures_International_BEAUTY_USERS.txt",'r')
 beautylines = beauty.readlines()
-tempEmail = []
-for line in beautylines:
-	lineList = line.strip().split('|')
-	tEmail = (lineList[0]).strip()
-	newPass = (lineList[1]).strip()
-	if tEmail not in tempEmail and newPass != prevPass:
-		tempEmail.append(tEmail)
-		pw_hash.append(newPass)
-	prevPass = newPass
+pw_hash.extend(process_email_pw_dump(beautylines))
 
 #boca
 #Sony 
-beauty = open("Sownage/Sony_Pictures/Sony_Pictures_International_DELBOCA_USERS.txt",'r')
-beautylines = beauty.readlines()
-tempEmail = []
-for line in beautylines:
-	lineList = line.strip().split('|')
-	tEmail = (lineList[0]).strip()
-	newPass = (lineList[1]).strip()
-	if tEmail not in tempEmail and newPass != prevPass:
-		tempEmail.append(tEmail)
-		pw_hash.append(newPass)
-	prevPass = newPass
-	
+delboca = open("../Sownage/Sony Pictures/Sony_Pictures_International_DELBOCA_USERS.txt",'r')
+delbocalines = delboca.readlines()
+pw_hash.extend(process_email_pw_dump(delbocalines))
+
 pw_dict = {}
 for el in pw_hash:
 	if el in pw_dict:
@@ -74,3 +71,7 @@ print 'Total elements:'+str(len(pw_hash))
 print 'Unique elements:'+str(len(set(pw_hash)))
 print 'Top 100 passwords'
 print sorted_pw[:100]
+
+pw_file = open('passwords.txt','w')
+for pw in pw_hash:
+	pw_file.write(pw+'\n')
