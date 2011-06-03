@@ -1,0 +1,13 @@
+I put this together really quickly, so it's not 100% accurate and I did my best to filter out duplicates since the DB these were taken from wasn't filtered well, but there is still definitely room for improvement.
+
+Total Passwords: 39897
+
+Unique Passwords: 30167
+
+Top 100 passwords
+
+[('password', 106), ('seinfeld', 106), ('winner', 89), ('123456', 79), ('sweeps', 48), ('purple', 46), ('princess', 40), ('contest', 39), ('peanut', 36), ('maggie', 35), ('shadow', 32), ('ginger', 31), ('9452', 30), ('michael', 28), ('buster', 28), ('sunshine', 27), ('cookie', 27), ('george', 27), ('abc123', 26), ('tigger', 26), ('bailey', 25), ('scooter', 25), ('harley', 24), ('summer', 24), ('baseball', 24), ('ashley', 22), ('taylor', 22), ('matthew', 22), ('bosco', 22), ('pepper', 22), ('sparky', 21), ('pookie', 21), ('yellow', 20), ('monkey', 20), ('hannah', 20), ('patches', 20), ('kramer', 20), ('flower', 20), ('joshua', 19), ('mustang', 19), ('fluffy', 19), ('restless', 18), ('brandon', 18), ('kitten', 18), ('jessica', 18), ('muffin', 18), ('justin', 17), ('andrea', 17), ('bandit', 17), ('lucky1', 17), ('jerry', 17), ('amanda', 17), ('family', 17), ('nathan', 17), ('popcorn', 17), ('diamond', 17), ('charlie', 17), ('madison', 16), ('orange', 16), ('biteme', 16), ('scooby', 15), ('robert', 15), ('chelsea', 15), ('qwerty', 15), ('butterfly', 15), ('yankees', 15), ('smokey', 15), ('tweety', 15), ('samantha', 15), ('dragon', 14), ('dakota', 14), ('morrison', 14), ('peaches', 14), ('cheese', 14), ('password1', 14), ('mother', 14), ('sweetpea', 14), ('angels', 14), ('teacher', 13), ('superman', 13), ('hunter', 13), ('rainbow', 13), ('nicole', 13), ('111111', 13), ('jordan', 13), ('snickers', 13), ('chocolate', 13), ('pumpkin', 13), ('sydney', 13), ('spencer', 13), ('snoopy', 13), ('lauren', 13), ('library', 12), ('murphy', 12), ('andrew', 12), ('baxter', 12), ('blackjack', 12), ('mickey', 12), ('jackson', 12), ('diamonds', 12)]
+
+
+
+Quick code here, along with passwords only dump(minus emails used as PWs): https://github.com/arfrank/LulzSec-Password-Analysis
